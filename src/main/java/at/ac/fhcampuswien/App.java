@@ -35,7 +35,18 @@ public class App {
 
     //todo Task 2
     public void stairs(){
+        Scanner userNumber = new Scanner (System.in);
+        System.out.print("n: ");
+        int totalNumber = userNumber.nextInt();
+        int numberCount = 0;
 
+        if(totalNumber <= 0)
+            System.out.println("Invalid number!");
+        for(int i = 1; i <= totalNumber; i++){
+            for(int j = 1; j <= i; j++){
+                numberCount++;
+                System.out.print(numberCount + " ");}
+            System.out.print("\n");}
         // input your solution here
     }
 
