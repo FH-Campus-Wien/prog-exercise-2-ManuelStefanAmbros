@@ -52,6 +52,14 @@ public class App {
 
     //todo Task 3
     public void printPyramid(){
+        int row = 6;
+        String star = "*";
+        for(int i = 1; i <= row; i++){
+            for(int j = 5; j >= i; j--){
+                System.out.print(" ");}
+            if(i != 1)
+                star += "**";
+            System.out.print(star + "\n");}
         // input your solution here
     }
 
