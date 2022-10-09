@@ -8,36 +8,34 @@ public class App {
 
     //todo Task 1
     public void largestNumber(){
-        int count = 1;
-        double numberCheck = 0;
-        Scanner inputNumber = new Scanner(System.in);
-        System.out.print("Number " + count + ": ");
-        double numberOne = inputNumber.nextDouble();
-        String numberFormat;
+        int numberCount = 1;
+        Scanner userInput = new Scanner(System.in);
+        System.out.print("Number " + numberCount + ": ");
+        double userNumber = userInput.nextDouble();
+        double highestNumber = userNumber;
+        String formatNumber;
 
-        if(numberOne <= 0)
+        if(userNumber <= 0) {
             System.out.println("No number entered.");
-        else
-            do {
-                count ++;
-                System.out.print("Number " + count + ": ");
-                numberOne = inputNumber.nextDouble();
-                if(numberOne > numberCheck)
-                    numberCheck = numberOne;
-                if(numberOne <= 0) {
-                    numberFormat = String.format("%.2f", numberCheck);
-                    System.out.println("The largest number is " + numberFormat);
-                }
+        }
+        while(userNumber > 0){
+            numberCount++;
+            System.out.print("Number " + numberCount + ": ");
+            userNumber = userInput.nextDouble();
+            if(highestNumber <= userNumber)
+                highestNumber = userNumber;
+            if(userNumber <= 0) {
+                formatNumber = String.format("%.2f",highestNumber);
+                System.out.println("The largest number is " + formatNumber);
             }
-            while(numberOne > 0);
-
-
+        }
 
         // input your solution here
     }
 
     //todo Task 2
     public void stairs(){
+
         // input your solution here
     }
 
