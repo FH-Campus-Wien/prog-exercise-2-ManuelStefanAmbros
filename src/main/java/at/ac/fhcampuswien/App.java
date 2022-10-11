@@ -65,6 +65,67 @@ public class App {
 
     //todo Task 4
     public void printRhombus(){
+        Scanner hei = new Scanner(System.in);
+        System.out.print("h: ");
+        int h = hei.nextInt();
+        System.out.print("c: ");
+        int c = hei.next().charAt(0);
+        int corr;
+        int corrFront;
+
+
+
+        if(h % 2 == 0)
+            System.out.println("Invalid number!");
+        else{
+            for(int i = 0; i < h / 2 + 1; i++) {
+                corr = c;
+                corrFront = c;
+                for (int j = h / 2; j > i; j--)
+                    System.out.print(" ");
+                for (int l = 1; l <= i; l++) {
+                    if (l == 1)
+                        corrFront = c - i;
+                    else
+                        corrFront++;
+                    System.out.print((char) corrFront);
+                }
+                System.out.print((char) c);
+                if (i == 0)
+                    System.out.print("\n");
+                else {
+                    for (int k = 1; k <= i; k++) {
+                        corr--;
+                        System.out.print((char) corr);
+                        if (k == i)
+                            System.out.print("\n");
+                    }
+                }
+            }
+        }
+        for(int z = 1; z <= h / 2; z++){
+            corr = c;
+            corrFront = c;
+            for(int y = 0; y < z; y++)
+                System.out.print(" ");
+            for (int x = z + 1; x <= h / 2; x++) {
+                if (x == z + 1)
+                    corrFront = c - h / 2 + z;
+                else
+                    corrFront++;
+                System.out.print((char) corrFront);
+            }
+            System.out.print((char) c);
+            for (int w = h / 2 - 1; w >= z; w--) {
+                corr--;
+                System.out.print((char) corr);
+                if (w == z)
+                    System.out.print("\n");}
+            if(z == h / 2) // Because AppTest wants a break at the end of the program
+                System.out.print("\n");
+
+        }
+
         // input your solution here
     }
 
