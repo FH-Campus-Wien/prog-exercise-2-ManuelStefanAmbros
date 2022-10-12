@@ -176,6 +176,35 @@ public class App {
 
     //todo Task 6
     public void happyNumbers(){
+        Scanner numberInput = new Scanner(System.in);
+        System.out.print("n: ");
+        int number = numberInput.nextInt();
+        int numberOne;
+        int numberTwo;
+        int numberThree;
+        int numberCalculated;
+
+        for(int i = 0; i < 1000; i ++){
+            numberThree = (number / 100);
+            numberTwo = ((number - (numberThree * 100)) / 10);
+            numberOne = ((number - (numberThree * 100)) - (numberTwo * 10));
+            if(numberThree == 0 && numberTwo == 0){
+                numberCalculated = (numberOne * numberOne);
+                i --;}
+            else if(numberThree == 0){
+                numberCalculated = (numberOne *numberOne) + (numberTwo * numberTwo);
+                i --;}
+            else{
+                numberCalculated = (numberThree * numberThree) + (numberTwo * numberTwo) + (numberOne * numberOne);
+                i --;}
+            number = numberCalculated;
+            if(numberCalculated == 1){
+                System.out.println("Happy number!");
+                i = 1000;}
+            else if(numberCalculated == 4){
+                System.out.println("Sad number!");
+                i = 1000;}
+        }
         // input your solution here
     }
 
