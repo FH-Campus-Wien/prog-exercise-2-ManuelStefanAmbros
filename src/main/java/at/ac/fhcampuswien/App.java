@@ -131,6 +131,47 @@ public class App {
 
     //todo Task 5
     public void marks(){
+        int count = 1;
+        int markCount = 0;
+        Scanner inputMark = new Scanner(System.in);
+        System.out.print("Mark " + count + ": ");
+        int markEntry = 1;
+        int totalMarks = 0;
+        double totalAverage;
+        String formatAverage;
+        int countNegative = 0;
+
+        while(markEntry != 0){
+            markEntry = inputMark.nextInt();
+            if (count == 1 && markEntry == 0){
+                totalAverage = totalMarks;
+                formatAverage = String.format("%.2f",totalAverage);
+                System.out.println("Average: " + formatAverage);
+                System.out.println("Negative marks: " + countNegative);}
+            else if(markEntry <= -1 || markEntry >= 6){
+                System.out.println("Invalid mark!");
+                System.out.print("Mark " + count + ": ");}
+            else if(markEntry >= 1 && markEntry <= 4){
+                totalMarks += markEntry;
+                count ++;
+                markCount ++;
+                System.out.print("Mark " + count + ": ");}
+            else if(markEntry == 5){
+                totalMarks += markEntry;
+                count ++;
+                markCount ++;
+                System.out.print("Mark " + count + ": ");
+                countNegative ++;}
+            else{
+                totalAverage = totalMarks;
+                totalAverage = totalAverage / markCount;
+                formatAverage = String.format("%.2f",totalAverage);
+                System.out.println("Average: " + formatAverage);
+                System.out.println("Negative marks: " + countNegative);
+                count = 1;
+                markEntry = 0;
+            }
+        }
         // input your solution here
     }
 
