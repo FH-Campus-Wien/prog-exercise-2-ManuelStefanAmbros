@@ -169,7 +169,6 @@ public class App {
                 System.out.println("Average: " + formatAverage);
                 System.out.println("Negative marks: " + countNegative);
                 count = 1;
-                markEntry = 0;
             }
         }
         // input your solution here
