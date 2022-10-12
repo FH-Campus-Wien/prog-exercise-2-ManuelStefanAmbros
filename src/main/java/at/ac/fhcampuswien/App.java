@@ -102,28 +102,28 @@ public class App {
                     }
                 }
             }
-        }
-        for(int z = 1; z <= h / 2; z++){
-            corr = c;
-            corrFront = c;
-            for(int y = 0; y < z; y++)
-                System.out.print(" ");
-            for (int x = z + 1; x <= h / 2; x++) {
-                if (x == z + 1)
-                    corrFront = c - h / 2 + z;
-                else
-                    corrFront++;
-                System.out.print((char) corrFront);
+            for(int z = 1; z <= h / 2; z++) {
+                corr = c;
+                corrFront = c;
+                for (int y = 0; y < z; y++)
+                    System.out.print(" ");
+                for (int x = z + 1; x <= h / 2; x++) {
+                    if (x == z + 1)
+                        corrFront = c - h / 2 + z;
+                    else
+                        corrFront++;
+                    System.out.print((char) corrFront);
+                }
+                System.out.print((char) c);
+                for (int w = h / 2 - 1; w >= z; w--) {
+                    corr--;
+                    System.out.print((char) corr);
+                    if (w == z)
+                        System.out.print("\n");
+                }
+                if (z == h / 2) // Because AppTest wants a break at the end of the program
+                    System.out.print("\n");
             }
-            System.out.print((char) c);
-            for (int w = h / 2 - 1; w >= z; w--) {
-                corr--;
-                System.out.print((char) corr);
-                if (w == z)
-                    System.out.print("\n");}
-            if(z == h / 2) // Because AppTest wants a break at the end of the program
-                System.out.print("\n");
-
         }
 
         // input your solution here
